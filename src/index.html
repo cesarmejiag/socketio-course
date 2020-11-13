@@ -1,85 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font: 13px Helvetica, Arial;
-        }
-
-        form {
-            background: #000;
-            padding: 3px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        form input {
-            border: 0;
-            padding: 10px;
-            width: 90%;
-            margin-right: 0.5%;
-        }
-
-        form button {
-            width: 9%;
-            background: rgb(130, 224, 255);
-            border: none;
-            padding: 10px;
-        }
-
-        #messages {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        #messages li {
-            padding: 5px 10px;
-        }
-
-        #messages li:nth-child(odd) {
-            background: #eee;
-        }
-    </style>
-</head>
-
-<body>
-    <!-- <ul id="messages"></ul>
-    <form id="form" action="">
-        <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
-
-    <script src="/socket.io/socket.io.js"></script>
-    <script>
-        var socket = io();
-        var form = document.getElementById('form');
-        var messages = document.getElementById('messages');
-        var input = document.getElementById('m');
-
-        form.addEventListener('submit', function(ev) {
-            ev.preventDefault();
-            socket.emit('chat message', input.value)
-            input.value = '';
-        });
-
-        socket.on('chat message', function(msg) {
-            messages.innerHTML += '<li>' + msg + '</li>';
-        });
-    </script> -->
-    <script>
-        const socket = new WebSocket('ws://127.0.0.1:3000');
-    </script>
-</body>
-
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chat using Socket.io and MongoDB</title>
+        <link rel="stylesheet" href="design/css/styles.css">
+    </head>
+    <body>
+        <div class="signup">
+            <form>
+                <input type="text">
+                <button></button>
+            </form>
+        </div>
+        <div class="chat">
+            <ul class="list"></ul>
+            <form>
+                <input autocomplete="off">
+                <button>Send</button>
+            </form>
+        </div>
+        <script src="socket.io/socket.io.js"></script>
+        <script src="design/js/scripts.js"></script>
+    </body>
 </html>
